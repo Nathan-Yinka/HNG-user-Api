@@ -2,7 +2,7 @@
 
 This document provides detailed information on how to use the REST API for the "Person" resource. Please refer to this documentation for setup instructions, request/response formats, sample API usage, and any known limitations or assumptions made during development.
 
-> LIVE API Endpoint is https://person-api-rgv0.onrender.com/
+> LIVE API Endpoint are https://person-api-rgv0.onrender.com/api for GET and POST requests and https://person-api-rgv0.onrender.com/api/{id} ,for PUT,DELETE and GET requests
 >
 
 
