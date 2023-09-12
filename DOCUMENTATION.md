@@ -81,38 +81,38 @@ The API provides the following endpoints for CRUD operations on the "Person" res
 
 ## Request/Response Formats
 
-### Create A Person (POST /api)
+* ### Create A Person (POST /api)
 
-**Request Format (/api):**
-```python
-import requests
+    **Request Format (/api):**
+    ```python
+    import requests
 
-api_url = "http://127.0.0.1:8000/api"
+    api_url = "http://127.0.0.1:8000/api"
 
-data = {
-    "name": "Oludare Nathaniel"
-}
+    data = {
+        "name": "Oludare Nathaniel"
+    }
 
-response = requests.post(api_url, json=data)
-print(response.json())
-```
+    response = requests.post(api_url, json=data)
+    print(response.json())
+    ```
 
-**Response Format (Created - 201):**
-```json
-{
-    "id":1,
-    "name": "oludare nathaniel",
-}
-```
+    **Response Format (Created - 201):**
+    ```json
+    {
+        "id":1,
+        "name": "oludare nathaniel",
+    }
+    ```
 
-**Response Format (Bad Request - 400):**
-```json
-{
-    "name": [
-        "Person with this Name already exists."
-    ]
-}
-```
+    **Response Format (Bad Request - 400):**
+    ```json
+    {
+        "name": [
+            "Person with this Name already exists."
+        ]
+    }
+    ```
 
 ### Read a Person (GET /api, /api/{id}, /api/{name}, /api?name={name})
 
@@ -320,4 +320,78 @@ The following validations are performed on the data received from the user when 
         ]
     }
     ```
+
+* When data from the user sent, the data is validated by removing extra trailing white spaces and is stored in lowercase.
+    Example
+    **Request Format (/api):**
+    ```python
+    import requests
+
+    api_url = "http://127.0.0.1:8000/api"
+
+    data = {
+        "name": "  OLUdare       Nathaniel        "   #data cotaining excess white spaces and upper and lower case 
+    }
+
+    response = requests.post(api_url, json=data)
+    print(response.json())
+    ```
+
+    **Response Format (Created - 201):**
+    ```json
+    {
+        "id":1,
+        "name": "oludare nathaniel",
+    }
+    ```
+
+* When black data is sent the data is validated and a bad request response is sent.
+    **Request Format (/api):**
+    ```python
+    import requests
+
+    api_url = "http://127.0.0.1:8000/api"
+
+    data = {
+        "name": "      "   #empty data sent to the backend
+    }
+
+    response = requests.post(api_url, json=data)
+    print(response.json())
+    ```
+
+    **Response Format (Bad Request - 400):**
+    ```json
+    {
+        "name": [
+            "This field may not be blank."
+        ]
+    }
+    ```
+
+*  When no data key **name** is sent to a bad request error response is raised
+     **Request Format (/api):**
+    ```python
+    import requests
+
+    api_url = "http://127.0.0.1:8000/api"
+
+    data = {
+       #no data with key "name' sent
+    }
+
+    response = requests.post(api_url, json=data)
+    print(response.json())
+    ```
+
+    **Response Format (Bad Request - 400):**
+    ```json
+    {
+        "name": [
+            "This field is required."
+        ]
+    }
+    ```
+
+
 
