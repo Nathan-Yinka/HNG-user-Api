@@ -2,9 +2,9 @@
 
 This document provides detailed information on how to use the REST API for the "Person" resource. Please refer to this documentation for setup instructions, request/response formats, sample API usage, and any known limitations or assumptions made during development.
 
-> LIVE API Endpoint is https://hgnxbackend-prmpsmart.b4a.run/api
+> LIVE API Endpoint is https://person-api-rgv0.onrender.com/
 >
-> LIVE API Endpoint is https://hgnxbackend-prmpsmart.b4a.run/api
+
 
 ## Table of Contents
 * [Setup Instructions](#setup-instructions)
@@ -45,7 +45,7 @@ pip install -r requirements.txt
 python manage.py runserver
 ```
 
-5. The API will be available locally at `http://127.0.0.1:8000`.
+5. The API will be available locally at `https://person-api-rgv0.onrender.com/`.
 
 ---
 
@@ -56,12 +56,12 @@ The API provides the following endpoints for CRUD operations on the "Person" res
 * **[Create](#create-a-person-post-api)**---
     Adding new person [POST]
 
-    * **`/api/`**
+    * **`/api`**
 
 * **[Read All (List)](#read-a-person-get-api-apiid-apiname-apinamename)**---
     Retrieving all persons in database [GET]
 
-    * **`/api/`**
+    * **`/api`**
 
 * **Read A Single Person**---
     Retrieving one specific person by id or name[GET]
@@ -87,7 +87,7 @@ The API provides the following endpoints for CRUD operations on the "Person" res
     ```python
     import requests
 
-    api_url = "http://127.0.0.1:8000/api/"
+    api_url = "https://person-api-rgv0.onrender.com/api"
 
     data = {
         "name": "Oludare Nathaniel"
@@ -120,7 +120,7 @@ The API provides the following endpoints for CRUD operations on the "Person" res
     ```python
     import requests
 
-    url = "http://127.0.0.1:8002/api/"
+    url = "https://person-api-rgv0.onrender.com/api"
 
     response = requests.request("GET", url)
 
@@ -149,7 +149,7 @@ The API provides the following endpoints for CRUD operations on the "Person" res
     ```python
     import requests
 
-    url = "http://127.0.0.1:8002/api/1"
+    url = "https://person-api-rgv0.onrender.com/api/1"
 
     response = requests.request("GET", url)
 
@@ -214,7 +214,7 @@ The API provides the following endpoints for CRUD operations on the "Person" res
     ```python
     import requests
 
-    api_url = "http://127.0.0.1:8000/api/adeyinka"
+    api_url = "https://person-api-rgv0.onrender.com/api/adeyinka"
 
     data = {
         "name": "Oludare Adeyinka"
@@ -236,7 +236,7 @@ The API provides the following endpoints for CRUD operations on the "Person" res
     ```python
     import requests
 
-    api_url = "http://127.0.0.1:8000/api/1"
+    api_url = "https://person-api-rgv0.onrender.com/api/1"
 
     data = {
         "name": "Daniel"
@@ -266,7 +266,7 @@ The API provides the following endpoints for CRUD operations on the "Person" res
     ```python
     import requests
 
-    api_url = "http://127.0.0.1:8000/api/daniel"
+    api_url = "https://person-api-rgv0.onrender.com/api/daniel"
 
     response = requests.delete(api_url)
     print(response.json())
@@ -276,7 +276,7 @@ The API provides the following endpoints for CRUD operations on the "Person" res
     ```python
     import requests
 
-    api_url = "http://127.0.0.1:8000/api/daniel"
+    api_url = "https://person-api-rgv0.onrender.com/api/daniel"
 
     response = requests.delete(api_url)
     print(response.json())
@@ -302,7 +302,7 @@ The following validations are performed on the data received from the user when 
     ```python
     import requests
 
-    api_url = "http://127.0.0.1:8000/api"
+    api_url = "https://person-api-rgv0.onrender.com/api"
 
     data = {
         "name": "Oludare Nathaniel2333"   #data containing other data types isnt allowed
@@ -327,7 +327,7 @@ The following validations are performed on the data received from the user when 
     ```python
     import requests
 
-    api_url = "http://127.0.0.1:8000/api"
+    api_url = "https://person-api-rgv0.onrender.com/api"
 
     data = {
         "name": "  OLUdare       Nathaniel        "   #data cotaining excess white spaces and upper and lower case 
@@ -350,7 +350,7 @@ The following validations are performed on the data received from the user when 
     ```python
     import requests
 
-    api_url = "http://127.0.0.1:8000/api"
+    api_url = "https://person-api-rgv0.onrender.com/api"
 
     data = {
         "name": "      "   #empty data sent to the backend
@@ -374,7 +374,7 @@ The following validations are performed on the data received from the user when 
     ```python
     import requests
 
-    api_url = "http://127.0.0.1:8000/api"
+    api_url = "https://person-api-rgv0.onrender.com/api"
 
     data = {
        #no data with key "name' sent
