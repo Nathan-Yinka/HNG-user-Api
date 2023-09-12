@@ -114,185 +114,185 @@ The API provides the following endpoints for CRUD operations on the "Person" res
     }
     ```
 
-### Read a Person (GET /api, /api/{id}, /api/{name}, /api?name={name})
+* ### Read a Person (GET /api, /api/{id}, /api/{name}, /api?name={name})
 
-**Request Format (/api):**
-```python
-import requests
+    **Request Format (/api):**
+    ```python
+    import requests
 
-url = "http://127.0.0.1:8002/api"
+    url = "http://127.0.0.1:8002/api"
 
-response = requests.request("GET", url)
+    response = requests.request("GET", url)
 
-print(response.json())
-```
+    print(response.json())
+    ```
 
-**Response Format (Ok- 200):**
-```json
-[
+    **Response Format (Ok- 200):**
+    ```json
+    [
+        {
+            "id": 1,
+            "name": "oludare nathaniel"
+        },
+        {
+            "id": 2,
+            "name": "adeyinka"
+        },
+        {
+            "id": 3,
+            "name": "nathan yinka"
+        }
+    ]
+    ```
+
+    **Request Format (/api/{id}):**
+    ```python
+    import requests
+
+    url = "http://127.0.0.1:8002/api/1"
+
+    response = requests.request("GET", url)
+
+    print(response.json())
+    ```
+
+    **Response Format (Ok- 200):**
+    ```json
     {
         "id": 1,
         "name": "oludare nathaniel"
-    },
+    }
+    ```
+
+    **Request Format (/api/{name}):**
+    ```python
+    import requests
+
+    url = "http://127.0.0.1:8002/api/adeyinka"
+
+    response = requests.request("GET", url)
+
+    print(response.json())
+    ```
+
+    **Response Format (Ok- 200):**
+    ```json
     {
         "id": 2,
         "name": "adeyinka"
-    },
-    {
-        "id": 3,
-        "name": "nathan yinka"
     }
-]
-```
+    ```
 
-**Request Format (/api/{id}):**
-```python
-import requests
+    **Request Format (/api?name={name}):**
+    ```python
+    import requests
 
-url = "http://127.0.0.1:8002/api/1"
+    url = "http://127.0.0.1:8002/api/adeyinka"
 
-response = requests.request("GET", url)
+    response = requests.request("GET", url)
 
-print(response.json())
-```
+    print(response.json())
+    ```
 
-**Response Format (Ok- 200):**
-```json
-{
-    "id": 1,
-    "name": "oludare nathaniel"
-}
-```
+    **Response Format (Ok- 200):**
+    ```json
+    {
+        "id": 2,
+        "name": "adeyinka"
+    }
+    ```
 
-**Request Format (/api/{name}):**
-```python
-import requests
+    **Response Format (Not Found - 404):**
+    ```json
+    {
+        "detail": "Not found."
+    }
+    ```
 
-url = "http://127.0.0.1:8002/api/adeyinka"
+* ### Update a Person (PUT /api/{name}, /api/{id})
+    **Request Format:(/api/{name})**
+    ```python
+    import requests
 
-response = requests.request("GET", url)
+    api_url = "http://127.0.0.1:8000/api/adeyinka"
 
-print(response.json())
-```
+    data = {
+        "name": "Oludare Adeyinka"
+    }
 
-**Response Format (Ok- 200):**
-```json
-{
-    "id": 2,
-    "name": "adeyinka"
-}
-```
+    response = requests.put(api_url, json=data)
+    print(response.json())
+    ```
 
-**Request Format (/api?name={name}):**
-```python
-import requests
+    **Response Format (Ok - 200):**
+    ```json
+    {
+        "id": 2,
+        "name": "oludare adeyinka"
+    }
+    ```
 
-url = "http://127.0.0.1:8002/api/adeyinka"
+    **Request Format:(/api/{id})**
+    ```python
+    import requests
 
-response = requests.request("GET", url)
+    api_url = "http://127.0.0.1:8000/api/1"
 
-print(response.json())
-```
+    data = {
+        "name": "Daniel"
+    }
 
-**Response Format (Ok- 200):**
-```json
-{
-    "id": 2,
-    "name": "adeyinka"
-}
-```
+    response = requests.put(api_url, json=data)
+    print(response.json())
+    ```
 
-**Response Format (Not Found - 404):**
-```json
-{
-    "detail": "Not found."
-}
-```
+    **Response Format (Ok - 200):**
+    ```json
+    {
+        "id": 1,
+        "name": "daniel"
+    }
+    ```
 
-### Update a Person (PUT /api/{name}, /api/{id})
-**Request Format:(/api/{name})**
-```python
-import requests
+    **Response Format (Not Found - 404):**
+    ```json
+    {
+        "detail": "Not found."
+    }
+    ```
 
-api_url = "http://127.0.0.1:8000/api/adeyinka"
+* ### Delete a Person (DELETE /api/{name},/api/{id})
+    **Request Format(/api/{name}):**
+    ```python
+    import requests
 
-data = {
-    "name": "Oludare Adeyinka"
-}
+    api_url = "http://127.0.0.1:8000/api/daniel"
 
-response = requests.put(api_url, json=data)
-print(response.json())
-```
+    response = requests.delete(api_url)
+    print(response.json())
+    ```
 
-**Response Format (Ok - 200):**
-```json
-{
-    "id": 2,
-    "name": "oludare adeyinka"
-}
-```
+    **Request Format(api/{id}):**
+    ```python
+    import requests
 
-**Request Format:(/api/{id})**
-```python
-import requests
+    api_url = "http://127.0.0.1:8000/api/daniel"
 
-api_url = "http://127.0.0.1:8000/api/1"
+    response = requests.delete(api_url)
+    print(response.json())
+    ```
 
-data = {
-    "name": "Daniel"
-}
+    **Response Format (NO_CONTENT - 204):**
+    ```json
 
-response = requests.put(api_url, json=data)
-print(response.json())
-```
+    ```
 
-**Response Format (Ok - 200):**
-```json
-{
-    "id": 1,
-    "name": "daniel"
-}
-```
-
-**Response Format (Not Found - 404):**
-```json
-{
-    "detail": "Not found."
-}
-```
-
-### Delete a Person (DELETE /api/{name},/api/{id})
-**Request Format(/api/{name}):**
-```python
-import requests
-
-api_url = "http://127.0.0.1:8000/api/daniel"
-
-response = requests.delete(api_url)
-print(response.json())
-```
-
-**Request Format(api/{id}):**
-```python
-import requests
-
-api_url = "http://127.0.0.1:8000/api/daniel"
-
-response = requests.delete(api_url)
-print(response.json())
-```
-
-**Response Format (NO_CONTENT - 204):**
-```json
-
-```
-
-**Response Format (Not Found - 404):**
-```json
-{
-    "detail": "Not found."
-}
-```
+    **Response Format (Not Found - 404):**
+    ```json
+    {
+        "detail": "Not found."
+    }
+    ```
 
 ## Data Validation
 The following validations are performed on the data received from the user when creating or updating a person record in the database using POST and PUT methods respectively.
