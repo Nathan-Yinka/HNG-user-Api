@@ -530,3 +530,9 @@ fetch("https://person-api-rgv0.onrender.com/api/david", requestOptions)
   .catch(error => console.log('error', error));
 ```
 
+---
+
+## Known Limitations and Assumptions
+1. The API is not secured in any way so it's recommended to use this only for local development purposes as you can update,create and delete without authorization
+2. The API saves all the names in lower case letters
+3. THE API doesnt accept and charaters or symbol to be saved in the database expect letters
