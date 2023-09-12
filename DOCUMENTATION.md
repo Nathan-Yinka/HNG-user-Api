@@ -73,7 +73,7 @@ The API provides the following endpoints for CRUD operations on the "Person" res
     * **`/api/{id}`**
     * **`/api/{name}`**
 
-* **Delete A Person**---
+* **[Delete A Person](#delete-a-person-delete-apinameapiid)**---
     Delete a single existing person by id or name [DELETE]
     * **`/api/{id}`**
     * **`/api/{name}`**
