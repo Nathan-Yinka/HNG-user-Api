@@ -56,12 +56,12 @@ The API provides the following endpoints for CRUD operations on the "Person" res
 * **[Create](#create-a-person-post-api)**---
     Adding new person [POST]
 
-    * **`/api`**
+    * **`/api/`**
 
 * **[Read All (List)](#read-a-person-get-api-apiid-apiname-apinamename)**---
     Retrieving all persons in database [GET]
 
-    * **`/api`**
+    * **`/api/`**
 
 * **Read A Single Person**---
     Retrieving one specific person by id or name[GET]
@@ -87,7 +87,7 @@ The API provides the following endpoints for CRUD operations on the "Person" res
     ```python
     import requests
 
-    api_url = "http://127.0.0.1:8000/api"
+    api_url = "http://127.0.0.1:8000/api/"
 
     data = {
         "name": "Oludare Nathaniel"
@@ -120,7 +120,7 @@ The API provides the following endpoints for CRUD operations on the "Person" res
     ```python
     import requests
 
-    url = "http://127.0.0.1:8002/api"
+    url = "http://127.0.0.1:8002/api/"
 
     response = requests.request("GET", url)
 
@@ -403,6 +403,8 @@ The following validations are performed on the data received from the user when 
         ]
     }
     ```
+
+
 
 
 
