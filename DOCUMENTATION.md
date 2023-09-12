@@ -52,12 +52,12 @@ python manage.py runserver
 
 The API provides the following endpoints for CRUD operations on the "Person" resource:
 
-* **Create**---
+* **[Create](#create-a-person-post-api)**---
     Adding new person [POST]
 
     * **`/api`**
 
-* **Read All (List)**---
+* **[Read All (List)](#read-a-person-get-api-apiid-apiname-apinamename)**---
     Retrieving all persons in database [GET]
 
     * **`/api`**
