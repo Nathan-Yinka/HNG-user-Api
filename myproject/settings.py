@@ -84,14 +84,13 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-db_from_env = dj_database_url.config(default="postgres://hng_api_user:99WwShBMhWEbGNqRAfZuyzUjtblUOXgH@dpg-ck0aom36fquc739kvk80-a.oregon-postgres.render.com/hng_api")
+database_url = os.environ.get("DATABASE_URL")
+db_from_env = dj_database_url.config(default=database_url)
 
 DATABASES = {
     'default': db_from_env
 }
 
-# DATABASES["default"] = dj_database_url.config(default="postgres://hng_api_user:99WwShBMhWEbGNqRAfZuyzUjtblUOXgH@dpg-ck0aom36fquc739kvk80-a.oregon-postgres.render.com/hng_api")
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
