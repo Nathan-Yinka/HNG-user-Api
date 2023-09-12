@@ -54,32 +54,32 @@ The API provides the following endpoints for CRUD operations on the "Person" res
 
 * **Create**
 
-Adding new person [POST]
+    Adding new person [POST]
 
 **`/api`**
 
 * **Read All (List)**
 
-Retrieving all persons in database [GET]
+    Retrieving all persons in database [GET]
 
 **`/api`**
 
 * **Read A Single Person**
 
-Retrieving one specific person by id or name[GET]
+    Retrieving one specific person by id or name[GET]
     * **`/api/{id}`** 
     * **`/api/{name}`**
     * **`/api?name={name}`**
 
 * **Update A Person**
 
-Updating a single existing person by id or name [PUT]
+    Updating a single existing person by id or name [PUT]
     * **`/api/{id}`**
     * **`/api/{name}`**
 
 * **Delete A Person**
 
-Delete a single existing person by id or name [DELETE]
+    Delete a single existing person by id or name [DELETE]
     * **`/api/{id}`**
     * **`/api/{name}`**
 
