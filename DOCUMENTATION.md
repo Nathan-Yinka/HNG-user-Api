@@ -7,7 +7,9 @@ This document provides detailed information on how to use the REST API for the "
 >To view the api as a pure json data use https://person-api-rgv0.onrender.com/api/?format=json
 
 > Link to UML diagram https://drive.google.com/file/d/1mLXtFjn2zflpX3wfGHN7rCOy7h1DBaWc/view
-
+>
+>Link to **POSTMAN** documentation of this api https://documenter.getpostman.com/view/28578777/2s9YC4TXhC
+>
 
 ## Table of Contents
 * [Setup Instructions](#setup-instructions)
