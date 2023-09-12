@@ -20,7 +20,7 @@ To setup the api on your local machine, follow this steps on you command termina
 
 1. **Clone the Repository:**
 ```
-git clone https://github.com/prmpsmart/hgnx_backend.git
+git clone https://github.com/Nathan-Yinka/HNG-user-Api.git
 cd stage2
 ```
 
@@ -78,6 +78,37 @@ The API provides the following endpoints for CRUD operations on the "Person" res
     * **`/api/{id}`**
     * **`/api/{name}`**
 
+## Request/Response Formats
 
+### Create A Person (POST /api)
 
+**Request Format:**
+```python
+import requests
 
+api_url = "http://127.0.0.1:8000/api"
+
+data = {
+    "name": "Oludare Nathaniel"
+}
+
+response = requests.post(api_url, json=data)
+print(response.json())
+```
+
+**Response Format (Success - 201):**
+```json
+{
+    "id":1,
+    "name": "oludare nathaniel",
+}
+```
+
+**Response Format (Bad Request - 400):**
+```json
+{
+    "name": [
+        "Person with this Name already exists."
+    ]
+}
+```
