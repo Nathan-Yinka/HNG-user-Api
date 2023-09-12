@@ -182,6 +182,25 @@ print(response.json())
 }
 ```
 
+**Request Format (/api?name={name}):**
+```python
+import requests
+
+url = "http://127.0.0.1:8002/api/adeyinka"
+
+response = requests.request("GET", url)
+
+print(response.json())
+```
+
+**Response Format (Success- 200):**
+```json
+{
+    "id": 2,
+    "name": "adeyinka"
+}
+```
+
 **Response Format (Not Found - 404):**
 ```json
 {

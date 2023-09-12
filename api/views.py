@@ -12,11 +12,13 @@ def person_list(request):
     if request.method == "GET":
         persons = Person.objects.all()
         name = request.GET.get("name")   # get the query parameter name 
+        serializer=PersonSerializer(persons, many=True)
         
         if name:
             name = validate_name_space(name)  #A function created for data validation
-            persons = Person.objects.filter(name=name)
-        serializer=PersonSerializer(persons, many=True)
+            person = persons.get(name=name)
+            serializer=PersonSerializer(person)
+        
         return Response(serializer.data)
     
     if request.method == "POST":
