@@ -113,7 +113,7 @@ print(response.json())
 }
 ```
 
-### Read a Person (GET /api, /api/{id},/api/{name},/api?name={name})
+### Read a Person (GET /api, /api/{id}, /api/{name}, /api?name={name})
 
 **Request Format (/api):**
 ```python
