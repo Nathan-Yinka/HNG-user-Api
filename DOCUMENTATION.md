@@ -113,9 +113,9 @@ print(response.json())
 }
 ```
 
-### Read a Person (GET /api, /api/{id}, /api/{name}, /api?name={name})
+### Read a Person (GET /api, &nbsp &nbsp /api/{id}, &nbsp &nbsp /api/{name}, &nbsp &nbsp /api?name={name})
 
-**Request Format:**
+**Request Format (/api):**
 ```python
 import requests
 
@@ -144,7 +144,7 @@ print(response.json())
 ]
 ```
 
-**Request Format:**
+**Request Format (/api/{id}):**
 ```python
 import requests
 
@@ -163,7 +163,7 @@ print(response.json())
 }
 ```
 
-**Request Format:**
+**Request Format (/api/{name}):**
 ```python
 import requests
 
@@ -182,7 +182,7 @@ print(response.json())
 }
 ```
 
-**Response Format (Bad Request - 400):**
+**Response Format (Not Found - 404):**
 ```json
 {
     "detail": "Not found."
