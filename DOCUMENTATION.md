@@ -393,5 +393,16 @@ The following validations are performed on the data received from the user when 
     }
     ```
 
+* When creating a new Person, if the name already exist,it sends a 400 bad request error
+
+    **Response Format (Bad Request - 400):**
+    ```json
+    {
+        "name": [
+           "person with this name already exists."
+        ]
+    }
+    ```
+
 
 
