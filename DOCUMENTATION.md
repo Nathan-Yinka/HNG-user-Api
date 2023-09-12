@@ -297,27 +297,27 @@ print(response.json())
 ## Data Validation
 The following validations are performed on the data received from the user when creating or updating a person record in the database using POST and PUT methods respectively.
 * When data from the user is sent, the data is validated, so as to contain only string data type. That is any other data type isnt allowed.
-Example
-**Request Format (/api):**
-```python
-import requests
+    Example
+    **Request Format (/api):**
+    ```python
+    import requests
 
-api_url = "http://127.0.0.1:8000/api"
+    api_url = "http://127.0.0.1:8000/api"
 
-data = {
-    "name": "Oludare Nathaniel2333"   #data containing other data types isnt allowed
-}
+    data = {
+        "name": "Oludare Nathaniel2333"   #data containing other data types isnt allowed
+    }
 
-response = requests.post(api_url, json=data)
-print(response.json())
-```
+    response = requests.post(api_url, json=data)
+    print(response.json())
+    ```
 
-**Response Format (Bad Request - 400):**
-```json
-{
-    "name": [
-        "field must be a string"
-    ]
-}
-```
+    **Response Format (Bad Request - 400):**
+    ```json
+    {
+        "name": [
+            "field must be a string"
+        ]
+    }
+    ```
 
