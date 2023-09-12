@@ -259,3 +259,36 @@ print(response.json())
     "detail": "Not found."
 }
 ```
+
+### Delete a Person (DELETE /api/{name},/api/{id})
+**Request Format(/api/{name}):**
+```python
+import requests
+
+api_url = "http://127.0.0.1:8000/api/daniel"
+
+response = requests.delete(api_url)
+print(response.json())
+```
+
+**Request Format(api/{id}):**
+```python
+import requests
+
+api_url = "http://127.0.0.1:8000/api/daniel"
+
+response = requests.delete(api_url)
+print(response.json())
+```
+
+**Response Format (NO_CONTENT - 200):**
+```json
+
+```
+
+**Response Format (Not Found - 404):**
+```json
+{
+    "detail": "Not found."
+}
+```
