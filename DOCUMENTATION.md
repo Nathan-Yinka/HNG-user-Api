@@ -536,3 +536,4 @@ fetch("https://person-api-rgv0.onrender.com/api/david", requestOptions)
 1. The API is not secured in any way so it's recommended to use this only for local development purposes as you can update,create and delete without authorization
 2. The API saves all the names in lower case letters
 3. THE API doesnt accept and charaters or symbol to be saved in the database expect letters
+4. The API cannot have the same names save in the data base, names are unique.
