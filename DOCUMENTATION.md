@@ -112,3 +112,79 @@ print(response.json())
     ]
 }
 ```
+
+### Read a Person (GET /api, /api/{id}, /api/{name}, /api?name={name})
+
+**Request Format:**
+```python
+import requests
+
+url = "http://127.0.0.1:8002/api"
+
+response = requests.request("GET", url)
+
+print(response.json())
+```
+
+**Response Format (Success- 200):**
+```json
+[
+    {
+        "id": 1,
+        "name": "oludare nathaniel"
+    },
+    {
+        "id": 2,
+        "name": "adeyinka"
+    },
+    {
+        "id": 3,
+        "name": "nathan yinka"
+    }
+]
+```
+
+**Request Format:**
+```python
+import requests
+
+url = "http://127.0.0.1:8002/api/1"
+
+response = requests.request("GET", url)
+
+print(response.json())
+```
+
+**Response Format (Success- 200):**
+```json
+{
+    "id": 1,
+    "name": "oludare nathaniel"
+}
+```
+
+**Request Format:**
+```python
+import requests
+
+url = "http://127.0.0.1:8002/api/adeyinka"
+
+response = requests.request("GET", url)
+
+print(response.json())
+```
+
+**Response Format (Success- 200):**
+```json
+{
+    "id": 2,
+    "name": "adeyinka"
+}
+```
+
+**Response Format (Bad Request - 400):**
+```json
+{
+    "detail": "Not found."
+}
+```
