@@ -68,7 +68,7 @@ The API provides the following endpoints for CRUD operations on the "Person" res
     * **`/api/{name}`**
     * **`/api?name={name}`**
 
-* **Update A Person**---
+* **[Update A Person](#update-a-person-put-apiname-apiid)**---
     Updating a single existing person by id or name [PUT]
     * **`/api/{id}`**
     * **`/api/{name}`**
