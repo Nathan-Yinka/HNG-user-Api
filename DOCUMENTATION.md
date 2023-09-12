@@ -22,7 +22,7 @@ To setup the api on your local machine, follow this steps on you command termina
 1. **Clone the Repository:**
 ```
 git clone https://github.com/Nathan-Yinka/HNG-user-Api.git
-cd stage2
+cd HNG-user-Api
 ```
 
 2. **Setup the Virtual Environment**
