@@ -4,6 +4,9 @@ This document provides detailed information on how to use the REST API for the "
 
 > LIVE API Endpoint are https://person-api-rgv0.onrender.com/api for GET and POST requests and https://person-api-rgv0.onrender.com/api/{id} ,for PUT,DELETE and GET requests
 >
+>To view the api as a pure json data use https://person-api-rgv0.onrender.com/api/?format=json
+
+> Link to UML diagram https://drive.google.com/file/d/1mLXtFjn2zflpX3wfGHN7rCOy7h1DBaWc/view
 
 
 ## Table of Contents
