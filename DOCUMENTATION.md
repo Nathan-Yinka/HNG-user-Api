@@ -10,6 +10,7 @@ This document provides detailed information on how to use the REST API for the "
 * [Setup Instructions](#setup-instructions)
 * [API Endpoints](#api-endpoints)
 * [Request/Response Formats](#requestresponse-formats)
+* [Data Validation](#data-validation)
 * [Sample API Usage](#sample-api-usage)
 * [Known Limitations and Assumptions](#known-limitations-and-assumptions)
 
@@ -82,7 +83,7 @@ The API provides the following endpoints for CRUD operations on the "Person" res
 
 ### Create A Person (POST /api)
 
-**Request Format:**
+**Request Format (/api):**
 ```python
 import requests
 
@@ -281,7 +282,7 @@ response = requests.delete(api_url)
 print(response.json())
 ```
 
-**Response Format (NO_CONTENT - 200):**
+**Response Format (NO_CONTENT - 204):**
 ```json
 
 ```
@@ -292,3 +293,31 @@ print(response.json())
     "detail": "Not found."
 }
 ```
+
+## Data Validation
+The following validations are performed on the data received from the user when creating or updating a person record in the database using POST and PUT methods respectively.
+* When data from the user is sent, the data is validated, so as to contain only string data type. That is any other data type isnt allowed.
+Example
+**Request Format (/api):**
+```python
+import requests
+
+api_url = "http://127.0.0.1:8000/api"
+
+data = {
+    "name": "Oludare Nathaniel2333"   #data containing other data types isnt allowed
+}
+
+response = requests.post(api_url, json=data)
+print(response.json())
+```
+
+**Response Format (Bad Request - 400):**
+```json
+{
+    "name": [
+        "field must be a string"
+    ]
+}
+```
+
