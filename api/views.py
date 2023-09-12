@@ -16,7 +16,7 @@ def person_list(request):
         
         if name:
             name = validate_name_space(name)  #A function created for data validation
-            person = persons.get(name=name)
+            person = get_object_or_404(Person,name=name)
             serializer=PersonSerializer(person)
         
         return Response(serializer.data)

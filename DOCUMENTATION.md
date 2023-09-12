@@ -96,7 +96,7 @@ response = requests.post(api_url, json=data)
 print(response.json())
 ```
 
-**Response Format (Success - 201):**
+**Response Format (Created - 201):**
 ```json
 {
     "id":1,
@@ -126,7 +126,7 @@ response = requests.request("GET", url)
 print(response.json())
 ```
 
-**Response Format (Success- 200):**
+**Response Format (Ok- 200):**
 ```json
 [
     {
@@ -155,7 +155,7 @@ response = requests.request("GET", url)
 print(response.json())
 ```
 
-**Response Format (Success- 200):**
+**Response Format (Ok- 200):**
 ```json
 {
     "id": 1,
@@ -174,7 +174,7 @@ response = requests.request("GET", url)
 print(response.json())
 ```
 
-**Response Format (Success- 200):**
+**Response Format (Ok- 200):**
 ```json
 {
     "id": 2,
@@ -193,11 +193,63 @@ response = requests.request("GET", url)
 print(response.json())
 ```
 
-**Response Format (Success- 200):**
+**Response Format (Ok- 200):**
 ```json
 {
     "id": 2,
     "name": "adeyinka"
+}
+```
+
+**Response Format (Not Found - 404):**
+```json
+{
+    "detail": "Not found."
+}
+```
+
+### Update a Person (PUT /api/{name}, /api/{id})
+**Request Format:(/api/{name})**
+```python
+import requests
+
+api_url = "http://127.0.0.1:8000/api/adeyinka"
+
+data = {
+    "name": "Oludare Adeyinka"
+}
+
+response = requests.put(api_url, json=data)
+print(response.json())
+```
+
+**Response Format (Ok - 200):**
+```json
+{
+    "id": 2,
+    "name": "oludare adeyinka"
+}
+```
+
+**Request Format:(/api/{id})**
+```python
+import requests
+
+api_url = "http://127.0.0.1:8000/api/1"
+
+data = {
+    "name": "Daniel"
+}
+
+response = requests.put(api_url, json=data)
+print(response.json())
+```
+
+**Response Format (Ok - 200):**
+```json
+{
+    "id": 1,
+    "name": "daniel"
 }
 ```
 
