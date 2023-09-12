@@ -56,13 +56,13 @@ The API provides the following endpoints for CRUD operations on the "Person" res
 
     Adding new person [POST]
 
-**`/api`**
+    **`/api`**
 
 * **Read All (List)**
 
     Retrieving all persons in database [GET]
 
-**`/api`**
+    **`/api`**
 
 * **Read A Single Person**
 
