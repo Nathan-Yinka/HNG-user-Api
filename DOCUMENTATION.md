@@ -404,7 +404,129 @@ The following validations are performed on the data received from the user when 
     }
     ```
 
+## Sample API Usage
+Here are some sample API usage scenarios with Python code examples:
 
+1. **Read all Persons:**
+``` javascript
+var requestOptions = {
+  method: 'GET',
+  redirect: 'follow'
+};
 
+fetch("https://person-api-rgv0.onrender.com/api", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+```
 
+2. **Read a Person using the user_id:**
+```javascript
+var requestOptions = {
+  method: 'GET',
+  redirect: 'follow'
+};
+
+fetch("https://person-api-rgv0.onrender.com/api/2", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+```
+3. **Read a person using the unique name**
+```javascript
+var requestOptions = {
+  method: 'GET',
+  redirect: 'follow'
+};
+
+fetch("https://person-api-rgv0.onrender.com/api/nathan", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+```
+
+4. **Read a person using query parameters**
+```javascript
+var requestOptions = {
+  method: 'GET',
+  redirect: 'follow'
+};
+
+fetch("https://person-api-rgv0.onrender.com/api?name=nathan", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+```
+5. **Create new person with POST requests to /api**
+```javascript
+var formdata = new FormData();
+formdata.append("name", "Pelumi");
+
+var requestOptions = {
+  method: 'POST',
+  body: formdata,
+  redirect: 'follow'
+};
+
+fetch("https://person-api-rgv0.onrender.com/api", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+```
+
+6. **Update a person with id with PUT request**
+```javascript
+var formdata = new FormData();
+formdata.append("name", "Alex");
+
+var requestOptions = {
+  method: 'PUT',
+  body: formdata,
+  redirect: 'follow'
+};
+
+fetch("https://person-api-rgv0.onrender.com/api/2", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+```
+7. **Update a person with name with PUT request**
+```javascript
+var formdata = new FormData();
+formdata.append("name", "David");
+
+var requestOptions = {
+  method: 'PUT',
+  body: formdata,
+  redirect: 'follow'
+};
+
+fetch("https://person-api-rgv0.onrender.com/api/alex", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+```
+8. **Delete a person by ID or Name (DELETE)**
+```javascript
+var requestOptions = {
+  method: 'DELETE',
+  redirect: 'follow'
+};
+
+fetch("https://person-api-rgv0.onrender.com/api/4", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+```
+```javascript
+ var requestOptions = {
+  method: 'DELETE',
+  redirect: 'follow'
+};
+
+fetch("https://person-api-rgv0.onrender.com/api/david", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+```
 
